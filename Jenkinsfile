@@ -17,7 +17,7 @@ pipeline{
 		stage('Checkout del codigo'){
 			steps{
 				script{
-					git brach: 'main',
+					git branch: 'main',
 						credentials: repositoryCredentials,
 						url: repository
 				}
@@ -41,11 +41,12 @@ pipeline{
 				}
 			}
 		}
-		stage('Despliegue'{
+		stage('Despliegue'){
 			steps{
 				script{
 					docker.withRegistry('', registryCredentials) {
-					dockerImage.push()
+						dockerImage.push()
+					}
 				}
 			}
 		}
