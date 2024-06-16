@@ -58,9 +58,12 @@ pipeline{
 			}
 		}			
 	}
-	post{
-		always{
-			echo 'Registrar Build'
+	post {
+		success {
+			echo 'Pipeline ejecutado correctamente.'
+		}
+		failure {
+			echo 'Pipeline fallido.'
 		}
 	}
 }
