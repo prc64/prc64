@@ -59,6 +59,7 @@ pipeline{
 	}
 	post{
 		always{
-			echo 'Registrar Build'		}
+			echo 'Registrar Build'
+		}
 	}
 }
